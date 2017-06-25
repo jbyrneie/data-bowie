@@ -5,7 +5,7 @@ module.exports = {
     'build/static/**/!(*map*)'
   ],
   "runtimeCaching": [{
-    "urlPattern": /^https:\/\/jobs.glgresearch.com/data-bowie/service-worker.js/,
+    "urlPattern": /^https:\/\/jobs.glgresearch.com\/data-bowie\/service-worker.js/,
     "handler": "networkFirst"
   }],
   dontCacheBustUrlsMatching: /\.\w{8}\./,
