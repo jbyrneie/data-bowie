@@ -1,11 +1,11 @@
 {
-  "name": "React Mobx Material UI Demo",
-  "short_name": "Mobx Demo",
-  "start_url": ".",
-  "description": "React Mobx Material UI Demo",
+  "name": "Data Bowie",
+  "short_name": "Data Bowie",
+  "description": "React Mobx Material UI",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#3E4EB8",
-  "theme_color": "#2F3BA2",
+  "background_color": "#efefef",
+  "theme_color": "#212121",
   "icons": [
     {
       "src": "images/icons/icon-48x48.png",
