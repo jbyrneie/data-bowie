@@ -8,10 +8,11 @@ import ProductList from './components/productList';
 import ProductDetails from './components/productDetails';
 import Iframe from './components/iframe';
 
-console.log('in views...');
 let prefix=''
 if (process.env.NODE_ENV === 'production')
   prefix = process.env.REACT_APP_DATA_BOWIE_MOUNT
+
+console.log('in views...', prefix);
 
 const views = {
   home: new Route({
