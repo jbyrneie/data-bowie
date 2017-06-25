@@ -7,6 +7,7 @@ import {Route} from 'mobx-router';
 import ProductList from './components/productList';
 import ProductDetails from './components/productDetails';
 import Iframe from './components/iframe';
+import Home from './components/home'
 
 let prefix=''
 if (process.env.NODE_ENV === 'production')
@@ -15,9 +16,13 @@ if (process.env.NODE_ENV === 'production')
 console.log('in views...', prefix);
 
 const views = {
-  home: new Route({
+  home1: new Route({
     path: `${prefix}/`,
     component: <ProductList/>
+  }),
+  home: new Route({
+    path: `${prefix}/hasselhoff`,
+    component: <Home/>
   }),
   iframe: new Route({
     path: `${prefix}/iframe`,
