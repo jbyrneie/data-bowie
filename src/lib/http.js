@@ -5,7 +5,7 @@ export function post (path, data){
   return request
     .post(path)
     .timeout(60000)
-    //.withCredentials()
+    .withCredentials()
     .send(data)
     .then((res) => {
       return res.text?JSON.parse(res.text):null
