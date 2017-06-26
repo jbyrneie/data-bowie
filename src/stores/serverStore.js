@@ -35,6 +35,7 @@ class ServerStore {
   setSelectedServer = action( (server) => {
   	this.selectedServer = server;
   	this.getDatabases();
+    this.getServerInfo();
   });
 
   setSelectedDatabase = action( (db) => {
@@ -42,23 +43,28 @@ class ServerStore {
   });
 
   getServerInfo = action( () => {
+    console.log('getServerInfo for %s', this.selectedServer);
   	const opts = {
 		template: "serverStats",
   		data: {
-  			server: "PROD"
+  			server: this.selectedServer
   		}
   	}
-	return post('query', opts)
-        .then( response => {
-			this.serverInfo.name = response[0][0].SERVERNAME;
-			this.serverInfo.version = response[1][0].VERSION;
-			this.serverInfo.startDate = response[2][0].sqlserver_start_time;
-          	return this.serverInfo;
-        })
-        .catch( () => {
-          return 'Error hitting the hoff'
-        })
-  });
+
+  	return post('query', opts)
+      .then( response => {
+        let serverInfo = {}
+  			serverInfo.name = response[0][0].SERVERNAME;
+  			serverInfo.version = response[1][0].VERSION;
+  			serverInfo.startDate = response[2][0].sqlserver_start_time;
+        this.serverInfo = serverInfo
+        return
+      })
+      .catch( () => {
+        this.serverInfo = {}
+        return 'Error hitting the hoff'
+      })
+    });
 }
 
 export default ServerStore;

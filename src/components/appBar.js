@@ -27,12 +27,11 @@ class AppBar extends Component {
 
   componentDidMount() {
     this.props.store.serverStore.getServers()
-    //this.props.store.serverStore.getDatabases()
     console.log("servers:", JSON.stringify(this.props.store.serverStore.servers));
   }
-  //
 
   render() {
+    console.log('render called....');
     const servers = this.props.store.serverStore.servers;
     const databases = this.props.store.serverStore.databases;
 
@@ -64,7 +63,6 @@ class AppBar extends Component {
           </DropDownMenu>
         </span>
       </div>
-
     );
   }
 }

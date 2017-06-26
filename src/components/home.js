@@ -8,23 +8,18 @@ import Info from './info'
 
 class Home extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {serverInfo: {}}
-  }
-
   componentDidMount() {
-    let that = this;
     this.props.store.serverStore.getServerInfo()
     .then ( function(serverInfo) {
       console.log("post htp call" , serverInfo);
-      that.setState({serverInfo: serverInfo});
     })
   }
 
   render() {
 
-    const serverInfo = this.state.serverInfo;
+    console.log('home render...');
+    //const serverInfo = this.state.serverInfo;
+    const serverInfo = this.props.store.serverStore.serverInfo;
     console.log("foo: ", JSON.stringify(serverInfo))
 
     return (
