@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
 import _ from 'lodash';
-import Cake from 'material-ui/svg-icons/social/cake'
+import Group from 'material-ui/svg-icons/social/group'
 
 // ui imports
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -36,12 +36,14 @@ class AppBar extends Component {
     const databases = this.props.store.serverStore.databases;
 
     return (
-      <div className="clearfix" style={{borderBottom: 'solid 1px #000'}}>
+      <div>
+      <div className="clearfix">
         <span style={{float: 'left', marginLeft: '10px'}}>
-          <Cake/>
-          <span style={{fontWeight: 600, fontSize: '2em'}}>Data Hasselhoff</span>
+          <Group/>
+          <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
         </span>
         <span style={{float: 'right', marginRight: '10px'}}>
+          Options | <span style={{fontWeight: 600, paddingBottom:20}}>Server:</span>
           <DropDownMenu value={this.props.store.serverStore.selectedServer} onChange={this.serverChange}>
           {
             servers.map( (s,i) => {
@@ -52,6 +54,7 @@ class AppBar extends Component {
           }
           </DropDownMenu>
 
+          | <span style={{fontWeight: 600, paddingBottom:20}}>Database:</span>
           <DropDownMenu value={this.props.store.serverStore.selectedDatabase} onChange={this.databaseChange}>
           {
             databases.map( (db,i) => {
@@ -62,6 +65,8 @@ class AppBar extends Component {
           }
           </DropDownMenu>
         </span>
+      </div>
+      <div>  <hr style={{marginTop:'0', marginBottom:'0', border:'0', borderTop:'1px solid #e9ebed'}} /></div>
       </div>
     );
   }
