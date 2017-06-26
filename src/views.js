@@ -5,6 +5,7 @@ import {Route} from 'mobx-router';
 
 //components
 import Home from './components/home'
+import SystemInfo from './components/systemInfo'
 
 let prefix=''
 if (process.env.NODE_ENV === 'production')
@@ -16,6 +17,10 @@ const views = {
   home: new Route({
     path: `${prefix}/`,
     component: <Home/>
+  }),
+  systemInfo: new Route({
+    path: `${prefix}/systemInfo`,
+    component: <SystemInfo/>
   }),
   catchall: new Route({
     path:`${prefix}/:def`,

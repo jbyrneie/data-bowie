@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import {observer, inject} from 'mobx-react';
 import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import views from '../views'
 
 class Info extends Component {
+  buttonClick = (event) => {
+    console.log('event: %s', event);
+    this.props.store.router.goTo(views.systemInfo)
+  }
+
   render() {
     return (
       <Card style={{paddingTop:0, paddingBottom:0}}>
@@ -14,11 +21,13 @@ class Info extends Component {
           <FlatButton
             label={this.props.title}
             backgroundColor='#80d7e0'
-            hoverColor='#40b5c5' />
+            hoverColor='#40b5c5'
+            onTouchTap={this.buttonClick.bind(this, this.props.view)}
+          />
         </CardActions>
       </Card>
     );
   }
 }
 
-export default Info;
+export default inject((allStores) => ({ ...allStores }))(observer(Info));

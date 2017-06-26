@@ -64,7 +64,12 @@ class ServerStore {
         this.serverInfo = {}
         return 'Error hitting the hoff'
       })
-    });
+  });
+
+  getSystemInfo = action( () => {
+    console.log('getSystemInfo..');
+  });
+
 }
 
 export default ServerStore;

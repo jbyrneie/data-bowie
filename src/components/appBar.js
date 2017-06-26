@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
 import _ from 'lodash';
 import Group from 'material-ui/svg-icons/social/group'
+import views from '../views'
 
 // ui imports
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -14,6 +15,10 @@ class AppBar extends Component {
   constructor(props) {
     super(props);
     this.state = {value: "MASTER"};
+  }
+
+  home = (event) => {
+    this.props.store.router.goTo(views.home)
   }
 
   databaseChange = (event, index, value) => {
@@ -37,7 +42,7 @@ class AppBar extends Component {
 
     return (
       <div>
-        <div className="clearfix">
+        <div className="clearfix" onTouchTap={this.home.bind(this)}>
           <div style={{float: 'left', marginLeft:10, marginTop:10}}>
             <Group/>
             <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>

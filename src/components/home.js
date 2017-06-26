@@ -12,9 +12,6 @@ import Info from './info'
 class Home extends Component {
   componentDidMount() {
     this.props.store.serverStore.getServerInfo()
-    .then ( function(serverInfo) {
-      console.log("post htp call" , serverInfo);
-    })
   }
 
   render() {
