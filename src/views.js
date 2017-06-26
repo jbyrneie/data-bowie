@@ -10,7 +10,7 @@ let prefix=''
 if (process.env.NODE_ENV === 'production')
   prefix = process.env.REACT_APP_DATA_BOWIE_MOUNT
 
-console.log('in views...', prefix);
+console.log('in views... prefix: %s path: %s', prefix, path);
 
 const views = {
   home: new Route({
