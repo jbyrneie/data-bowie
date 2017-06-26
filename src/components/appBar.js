@@ -36,7 +36,7 @@ class AppBar extends Component {
     const databases = this.props.store.serverStore.databases;
 
     return (
-      <div style={{borderBottom: 'solid 1px #000'}}>
+      <div className="clearfix" style={{borderBottom: 'solid 1px #000'}}>
         <span style={{float: 'left', marginLeft: '10px'}}>
           <Cake/>
           <span style={{fontWeight: 600, fontSize: '2em'}}>Data Hasselhoff</span>
