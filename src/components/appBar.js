@@ -37,36 +37,41 @@ class AppBar extends Component {
 
     return (
       <div>
-      <div className="clearfix">
-        <span style={{float: 'left', marginLeft: '10px'}}>
-          <Group/>
-          <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
-        </span>
-        <span style={{float: 'right', marginRight: '10px'}}>
-          Options | <span style={{fontWeight: 600, paddingBottom:20}}>Server:</span>
-          <DropDownMenu value={this.props.store.serverStore.selectedServer} onChange={this.serverChange}>
-          {
-            servers.map( (s,i) => {
-              return (
-                <MenuItem value={s} primaryText={s} key={i}/>
-              )
-            })
-          }
-          </DropDownMenu>
+        <div className="clearfix">
+          <div style={{float: 'left', marginLeft:10, marginTop:10}}>
+            <Group/>
+            <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
+          </div>
+          <div style={{float: 'right', marginRight: '10px'}}>
+            <span>
+              <span style={{paddingBottom:20}}>Options | </span>
+              <span style={{fontWeight: 600, paddingBottom:20}}>Server:</span>
+              <DropDownMenu value={this.props.store.serverStore.selectedServer} onChange={this.serverChange}>
+              {
+                servers.map( (s,i) => {
+                  return (
+                    <MenuItem value={s} primaryText={s} key={i}/>
+                  )
+                })
+              }
+              </DropDownMenu>
+            </span>
 
-          | <span style={{fontWeight: 600, paddingBottom:20}}>Database:</span>
-          <DropDownMenu value={this.props.store.serverStore.selectedDatabase} onChange={this.databaseChange}>
-          {
-            databases.map( (db,i) => {
-              return (
-                <MenuItem value={db} primaryText={db} key={i}/>
-              )
-            })
-          }
-          </DropDownMenu>
-        </span>
-      </div>
-      <div>  <hr style={{marginTop:'0', marginBottom:'0', border:'0', borderTop:'1px solid #e9ebed'}} /></div>
+            <span>
+              <span style={{fontWeight: 600, paddingBottom:20}}>| Database:</span>
+              <DropDownMenu value={this.props.store.serverStore.selectedDatabase} onChange={this.databaseChange}>
+              {
+                databases.map( (db,i) => {
+                  return (
+                    <MenuItem value={db} primaryText={db} key={i}/>
+                  )
+                })
+              }
+              </DropDownMenu>
+            </span>
+          </div>
+        </div>
+        <div><hr style={{marginTop:'0', marginBottom:'0', border:'0', borderTop:'1px solid #e9ebed'}} /></div>
       </div>
     );
   }
