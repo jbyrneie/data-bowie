@@ -2,7 +2,7 @@ import request from 'superagent-bluebird-promise'
 export function post (path, data){
   if(path.indexOf('https') === -1)
     path = `${process.env.REACT_APP_HASSELHOFF_SERVER}/${path}`
-console.log('HTTP POST path %s data %s', path, JSON.stringify(data));        
+console.log('HTTP POST path %s data %s', path, JSON.stringify(data));
   return request
     .post(path)
     .timeout(60000)
