@@ -20,15 +20,12 @@ class Home extends Component {
       console.log("post htp call" , serverInfo);
       that.setState({serverInfo: serverInfo});
     })
-
-
   }
 
   render() {
 
     const serverInfo = this.state.serverInfo;
-
-    console.log("foo: ", serverInfo)
+    console.log("foo: ", JSON.stringify(serverInfo))
 
     return (
       <div className="App">
@@ -62,8 +59,6 @@ class Home extends Component {
                       view="dictionary"/>
               </GridTile>
           </GridList>
-
-
       </div>
     );
   }

@@ -41,13 +41,12 @@ class ServerStore {
   	this.selectedDatabase = db;
   });
 
-
   getServerInfo = action( () => {
   	const opts = {
 		template: "serverStats",
-		data: {
-			server: "DATAHUB"
-		}
+  		data: {
+  			server: "PROD"
+  		}
   	}
 	return post('query', opts)
         .then( response => {
@@ -59,9 +58,7 @@ class ServerStore {
         .catch( () => {
           return 'Error hitting the hoff'
         })
-
   });
-
 }
 
 export default ServerStore;
