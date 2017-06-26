@@ -4,8 +4,8 @@ import {Card, CardText} from 'material-ui/Card';
 import Group from 'material-ui/svg-icons/social/group'
 import Paper from 'material-ui/Paper';
 import {observer, inject} from 'mobx-react';
-
-import '../App.css';
+import '../css/font.css'
+import '../App.css'
 import AppBar from './appBar'
 import Info from './info'
 
@@ -18,38 +18,37 @@ class Home extends Component {
     const serverInfo = this.props.store.serverStore.serverInfo;
 
     return (
-      <div className="App">
+      <div>
         <AppBar style={{height: '50px'}}/>
-        <section style={{alignItems:'center', justifyContent:'center'}}>
-          <Paper style={{textAlign: 'left', margin:20, paddingTop:5, paddingBottom: 20, paddingLeft: 20, paddingRight:20, backgroundColor:'#eee'}} zDepth={2} >
-            <div>
-              <Group/>
-              <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
-              <p style={{borderBottom: 'solid 1px #000', paddingBottom:20}}>While the Hoff is gone to the beach, Ziggy Stardust will watch over your databases</p>
-              <div><b>Server:</b> {serverInfo.name }</div>
-              <div><b>Version:</b> {serverInfo.version !== undefined ? serverInfo.version : null}</div>
-              <div><b>Last Start Time:</b> {serverInfo.startDate !== undefined ? serverInfo.startDate : null}</div>
-            </div>
-          </Paper>
+        <section className='custom-container' id='system-info'>
+          <div className='list-wrap' style={{backgroundColor: '#fff', marginTop:10, marginBottom:10}}>
+            <Group/>
+            <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
+            <p>While the Hoff is gone to the beach, Ziggy Stardust will watch over your databases</p>
+            <div><hr style={{marginTop:'5', marginBottom:'15', border:'0', borderTop:'1px solid #e9ebed'}} /></div>
+            <div><b>Server:</b> {serverInfo.name }</div>
+            <div><b>Version:</b> {serverInfo.version !== undefined ? serverInfo.version : null}</div>
+            <div><b>Last Start Time:</b> {serverInfo.startDate !== undefined ? serverInfo.startDate : null}</div>
+          </div>
 
-          <GridList
+          <GridList className='list-wrap'
               cols={3}
-              cellHeight={200}
-              style={{height: '100%', textAlign: 'left'}}
+              cellHeight={300}
+              style={{backgroundColor: '#fff', margin:'auto'}}
           >
-            <GridTile style={{paddingTop:10, paddingBottom:10, paddingLeft:16, paddingRight:16}}>
+            <GridTile className='list-wrap' style={{paddingTop:1, paddingBottom:0, paddingLeft:1, paddingRight:16}}>
               <Info
                 title="System Info"
                 description="View info such as current processes, tables, database sizes, etc."
                 view="systemInfo"/>
             </GridTile>
-            <GridTile style={{paddingTop:10, paddingBottom:10,  paddingLeft:16, paddingRight:16}}>
+            <GridTile className='list-wrap' style={{paddingTop:1, paddingBottom:10,  paddingLeft:16, paddingRight:16}}>
               <Info
                 title="Maintenance"
                 description="Here you'll find tools to help you tune your database. This section includes information such as unused indexes, unused stored procedures, fragmented indexes, etc."
                 view="maintenance"/>
             </GridTile>
-            <GridTile style={{paddingTop:10, paddingBottom:10, paddingLeft:16, paddingRight:16}}>
+            <GridTile className='list-wrap' style={{paddingTop:1, paddingBottom:10, paddingLeft:16, paddingRight:16}}>
               <Info
                 title="Data Dictionary"
                 description="What the heck is that table even used for? Read through the data dictionary and find out. Even better, if you know, edit the dictionary and share your knowledge."

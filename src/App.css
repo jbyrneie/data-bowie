@@ -1,21 +1,26 @@
-.App {
-  text-align: center;
+.custom-container {
+  margin: 0 auto;
+  max-width: 1133px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
+/* Desktop */
+@media (min-width: 800px) {
+  #opl-list{
+    /*padding-top: 30px;*/
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  #refer-list{
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .list-wrap{
+    margin: 0 auto;
+    max-width: 940px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 .clearfix:after {

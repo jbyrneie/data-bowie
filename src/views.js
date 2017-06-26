@@ -6,6 +6,7 @@ import {Route} from 'mobx-router';
 //components
 import Home from './components/home'
 import SystemInfo from './components/systemInfo'
+import ToBeImplemented from './components/toBeImplemented'
 
 let prefix=''
 if (process.env.NODE_ENV === 'production')
@@ -21,6 +22,30 @@ const views = {
   systemInfo: new Route({
     path: `${prefix}/systemInfo`,
     component: <SystemInfo/>
+  }),
+  systemInfoDetail: new Route({
+    path: `${prefix}/systemInfoDetail`,
+    component: <SystemInfo/>
+  }),
+  systemProcesses: new Route({
+    path: `${prefix}/systemProcesses`,
+    component: <ToBeImplemented/>
+  }),
+  connectionStats: new Route({
+    path: `${prefix}/connectionStats`,
+    component: <ToBeImplemented/>
+  }),
+  tables: new Route({
+    path: `${prefix}/tables`,
+    component: <ToBeImplemented/>
+  }),
+  dbSpace: new Route({
+    path: `${prefix}/dbSpace`,
+    component: <ToBeImplemented/>
+  }),
+  tableSpace: new Route({
+    path: `${prefix}/tableSpace`,
+    component: <ToBeImplemented/>
   }),
   catchall: new Route({
     path:`${prefix}/:def`,

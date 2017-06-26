@@ -3,6 +3,8 @@ import {observer, inject} from 'mobx-react';
 import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import views from '../views'
+import '../css/font.css'
+import '../App.css'
 
 class Info extends Component {
   buttonClick = (event) => {
@@ -12,7 +14,7 @@ class Info extends Component {
 
   render() {
     return (
-      <Card style={{paddingTop:0, paddingBottom:0}}>
+      <Card className='opl-list'>
         <CardTitle style={{paddingTop:0, paddingBottom:5}} title={this.props.title} />
         <CardText style={{paddingTop:0}}>
           {this.props.description}

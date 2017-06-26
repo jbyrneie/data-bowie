@@ -3,6 +3,7 @@ import {observer, inject} from 'mobx-react';
 import _ from 'lodash';
 import Group from 'material-ui/svg-icons/social/group'
 import views from '../views'
+import '../css/font.css'
 
 // ui imports
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -42,10 +43,10 @@ class AppBar extends Component {
 
     return (
       <div>
-        <div className="clearfix" onTouchTap={this.home.bind(this)}>
+        <div className="clearfix" style={{backgroundColor: '#fff'}} onTouchTap={this.home.bind(this)}>
           <div style={{float: 'left', marginLeft:10, marginTop:10}}>
             <Group/>
-            <span style={{fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
+            <span style={{marginLeft:10, fontWeight: 600, fontSize: '2em'}}>Data Bowie</span>
           </div>
           <div style={{float: 'right', marginRight: '10px'}}>
             <span>

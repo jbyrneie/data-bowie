@@ -2,28 +2,60 @@ import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
 import Paper from 'material-ui/Paper';
 import AppBar from './appBar'
+import views from '../views'
 
 class SystemInfo extends Component {
   componentDidMount() {
     this.props.store.serverStore.getSystemInfo()
   }
 
+  handleClick = (event) => {
+    console.log('event: %s', event);
+    let route = views.home
+
+    switch(event) {
+      case "systemInfoDetail":
+          route = views.home
+          break;
+      case "systemProcesses":
+          route = views.systemProcesses
+          break;
+      case "connectionStats":
+          route = views.connectionStats
+          break;
+      case "tables":
+          route = views.tables
+          break;
+      case "dbSpace":
+          route = views.dbSpace
+          break;
+      case "tableSpace":
+          route = views.tableSpace
+          break;
+      default:
+          route = views.home
+    }
+
+    console.log('route: %s', JSON.stringify(route))
+    this.props.store.router.goTo(route)
+  }
+
   render() {
     return (
       <div>
         <AppBar style={{height: '50px'}}/>
-        <section style={{alignItems:'center', justifyContent:'center'}}>
-          <Paper style={{textAlign: 'left', margin:20, paddingTop:5, paddingBottom: 20, paddingLeft: 20, paddingRight:20, backgroundColor:'#eee'}} zDepth={2} >
+        <section className='custom-container' id='system-info'>
+          <div className='list-wrap' style={{backgroundColor: '#fff', marginTop:10, marginBottom:10, paddingBottom:10}}>
             <span style={{fontWeight: 600, fontSize: '2em'}}>SystemInfo</span>
             <ul>
-              <li>System Information</li>
-              <li>System Processes</li>
-              <li>Host/Program Connection Stats</li>
-              <li>All Tables</li>
-              <li>DB Space Used</li>
-              <li>Table Space Used</li>
+              <li><a href='#' onClick={this.handleClick.bind(this,'systemInfoDetail')}>System Information</a></li>
+              <li><a href='#' onClick={this.handleClick.bind(this,'systemProcesses')}>System Processes</a></li>
+              <li><a href='#' onClick={this.handleClick.bind(this,'connectionStats')}>Host/Program Connection Stats</a></li>
+              <li><a href='#' onClick={this.handleClick.bind(this,'tables')}>All Tables</a></li>
+              <li><a href='#' onClick={this.handleClick.bind(this,'dbSpace')}>DB Space Used</a></li>
+              <li><a href='#' onClick={this.handleClick.bind(this,'tableSpace')}>Table Space Used</a></li>
             </ul>
-          </Paper>
+          </div>
         </section>
       </div>
     );
