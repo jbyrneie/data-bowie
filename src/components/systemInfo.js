@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
-import Paper from 'material-ui/Paper';
 import AppBar from './appBar'
 import views from '../views'
 
@@ -44,8 +43,8 @@ class SystemInfo extends Component {
     return (
       <div>
         <AppBar style={{height: '50px'}}/>
-        <section className='custom-container' id='system-info'>
-          <div className='list-wrap' style={{backgroundColor: '#fff', marginTop:10, marginBottom:10, paddingBottom:10}}>
+        <section className='container' id='system-info'>
+          <div className='component-wrap' style={{backgroundColor: '#fff', marginTop:10, marginBottom:10, paddingBottom:10}}>
             <span style={{fontWeight: 600, fontSize: '2em'}}>SystemInfo</span>
             <ul>
               <li><a href='#' onClick={this.handleClick.bind(this,'systemInfoDetail')}>System Information</a></li>

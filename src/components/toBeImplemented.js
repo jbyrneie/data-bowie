@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
-import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
 import views from '../views'
 
 class ToBeImplemented extends Component {

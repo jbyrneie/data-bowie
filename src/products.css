@@ -1,5 +1,5 @@
 
-.list-wrap{
+.component-wrap{
   background: #fff;
   font-size: 1.2em;
 }
@@ -9,7 +9,7 @@
   #items-list{
     padding: 30px
   }
-  .list-wrap{
+  .component-wrap{
     margin: 0 auto;
     max-width: 940px;
     padding-top: 30px;

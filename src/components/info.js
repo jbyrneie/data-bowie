@@ -4,7 +4,7 @@ import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import views from '../views'
 import '../css/font.css'
-import '../App.css'
+import '../css/App.css';
 
 class Info extends Component {
   buttonClick = (event) => {
